@@ -4,10 +4,11 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use('/',require('./app/routing/htmlRoutes'));
+app.use('/api',require('./app/routing/apiRoutes'));
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "app/public/home.html"));
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
 });

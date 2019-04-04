@@ -1,0 +1,76 @@
+body {
+    background-image: url(../images/andrew-ridley-76547-unsplash.jpg);
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    margin: 0;
+}
+
+#header {
+    margin: 100px auto;
+    padding: 100px 75px;
+    background-color: #a5a59e;
+    color: #414f55;
+    border: solid 7px #d9a693;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    position: relative;
+}
+
+h1 {
+    text-shadow: -2px 2px antiquewhite;
+}
+
+.btn {
+    background-color: #e99386;
+    color: #414f55;
+    box-shadow: 0 4px #bbbc75;
+}
+
+.btn:active {
+    box-shadow: 0 0px;
+    transform: translateY(4px);
+}
+
+.btn:hover {
+    background-color: #a76b62;
+}
+
+#json-link {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#survey-head {
+    background-color: #bbbc75;
+    border: solid 2px #d9a693;
+    color: #414f55;
+    margin: 20px 100px 0px 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#survey-input-div {
+    background-color: #a5a59e;
+    border: solid 2px #d9a693;
+    color: #414f55;
+    margin: 0px 100px 20px 100px;
+    padding: 20px;
+}
+
+form {
+    line-height: 2;
+}
+
+@media only screen and (max-width : 768px) {
+    #survey-head, #survey-input-div {
+        margin: 0;
+    }
+}
