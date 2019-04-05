@@ -19,9 +19,26 @@ $(document).ready(function() {
             $(divArr[i]).append(answerMenu.clone().attr("class", "numPick"));
         }
     }
-    
+
+    function validateForm() {
+        let isValid = true;
+        $(".form-control").each(function() {
+            if ($(this).val() === "") {
+                isValid = false;
+            }
+        });
+        $(".numPick").each(function() {
+            if($(this).val() === "") {
+                isValid = false;
+            }
+        })
+        return isValid;
+    }
+
     $("#survey-answer-btn").on("click", function(event) {
         event.preventDefault();
+
+        if (validateForm()) {
     
         let objArr = $(".numPick");
         let answers = [];
@@ -45,5 +62,10 @@ $(document).ready(function() {
             $("#match").modal("toggle");
             $(".modal-body").append("<p>" + data.name + "</p><br><img id='result-img' src=" + data.image + ">");
         });
+
+     } else {
+         alert("Must fill out all fields before submitting.");
+     }
+
     });
 });
