@@ -6,12 +6,12 @@ let friends = [
     },
     {
         name: "Angel",
-        image: "https://www.pexels.com/photo/short-coated-white-and-black-dog-1404727/",
+        image: "https://images.pexels.com/photos/1404727/pexels-photo-1404727.jpeg?cs=srgb&dl=adorable-animal-black-and-white-1404727.jpg&fm=jpg",
         answers: [5,2,5,3,2,1,4,2,4,3]
     },
     {
         name: "Pickles",
-        image: "https://www.pexels.com/photo/animal-pet-cute-kitten-45201/",
+        image: "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         answers: [4,2,4,4,5,2,5,2,1,4]
     },
 ];

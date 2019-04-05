@@ -60,6 +60,7 @@ $(document).ready(function() {
             console.log(data.image);
 
             $("#match").modal("toggle");
+            $(".modal-body").empty();
             $(".modal-body").append("<p>" + data.name + "</p><br><img id='result-img' src=" + data.image + ">");
         });
 
