@@ -1,14 +1,17 @@
-const express = require('express');
-const router = express.Router();
+let friends = require("../data/friends");
 
-router.get("/api/friends", function(req, res) {
-    res.json(friends);
-});
-  
-router.post("/api/friends", function(req, res) {
-    friends.push(req.body);
-    res.json(req.body);
-});
 
-//some other endpoints to submit data
-module.exports = router;
+module.exports = function(app) {
+
+    app.get("/api/friends", function(req, res) {
+        res.json(friends);
+    });
+    
+    app.post("/api/friends", function(req, res) {
+        // compare friends passing req.body
+        let match = require("../data/logic")(req.body, friends);
+        friends.push(req.body);
+        res.json(match);
+    });
+
+}

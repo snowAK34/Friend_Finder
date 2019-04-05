@@ -23,18 +23,22 @@ h1 {
     text-shadow: -2px 2px antiquewhite;
 }
 
-.btn {
+#btn-to-survey, #home-btn, #survey-answer-btn {
     background-color: #e99386;
     color: #414f55;
     box-shadow: 0 4px #bbbc75;
 }
 
-.btn:active {
+#survey-answer-btn {
+    margin-top: 20px;
+}
+
+#btn-to-survey:active, #home-btn:active, #survey-answer-btn:active {
     box-shadow: 0 0px;
     transform: translateY(4px);
 }
 
-.btn:hover {
+#btn-to-survey:hover, #home-btn:hover, #survey-answer-btn:hover {
     background-color: #a76b62;
 }
 
@@ -67,6 +71,16 @@ h1 {
 
 form {
     line-height: 2;
+}
+
+.dropdown {
+    margin: 10px;
+}
+
+.btn {
+    background-color: #bbbc75;
+    color: #414f55;
+    border: solid 2px #d9a693;
 }
 
 @media only screen and (max-width : 768px) {

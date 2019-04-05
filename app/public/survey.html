@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:700" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
         
@@ -19,34 +19,75 @@
         <h4>About You</h4>
         <form>
             Name:<br>
-            <input type="text" name="name" required><br>
+            <input type="text" id="name" required><br>
             Link to photo image:<br>
-            <input type="url" name="image" required><br>
+            <input type="url" id="image" required><br>
         <hr>
-            <h5>Question 1</h5>
-
-            <h5>Question 2</h5>
-
-            <h5>Question 3</h5>
-
-            <h5>Question 4</h5>
-
-            <h5>Question 5</h5>
-
-            <h5>Question 6</h5>
-
-            <h5>Question 7</h5>
-
-            <h5>Question 8</h5>
-
-            <h5>Question 9</h5>
-
-            <h5>Question 10</h5>
-
+            <div id="q1">
+                <h5>1.</h5>
+                <p>I like to get up early.</p>
+            </div>
+            <div id="q2">
+                <h5>2.</h5>
+                <p>Sports are very exciting.</p>
+            </div>
+            <div id="q3">
+                <h5>3.</h5>
+                <p>Staying in can be a great Friday night.</p>
+            </div>
+            <div id="q4">
+                <h5>4.</h5>
+                <p>Books are better than movies.</p>
+            </div>
+            <div id="q5">
+                <h5>5.</h5>
+                <p>My best friend is an animal.</p>
+            </div>
+            <div id="q6">
+                <h5>6.</h5>
+                <p>Coffee is the elixir of life.</p>
+            </div>
+            <div id="q7">
+                <h5>7.</h5>
+                <p>Breakfast is the best meal of the day.</p>
+            </div>
+            <div id="q8">
+                <h5>8.</h5>
+                <p>I prefer to live in a big city.</p>
+            </div>
+            <div id="q9">
+                <h5>9.</h5>
+                <p>Dogs are better than cats.</p>
+            </div>
+            <div id="q10">
+                <h5>10.</h5>
+                <p>I like to be creative.</p>
+            </div>
             <input type="submit" value="Submit" class="btn" id="survey-answer-btn">
         </form>
+        <div class="modal" id="match" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Your match!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 
-    <script src="../routing/apiRoutes.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>

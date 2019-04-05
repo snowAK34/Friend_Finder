@@ -1,29 +1,19 @@
 let friends = [
     {
         name: "Placeholder Name",
-        image: "img url",
-        answers: [1,2,3,4,5,6,7,8,9,10]
-    }
+        image: "https://picsum.photos/200/300",
+        answers: [1,2,3,4,5,1,2,3,4,5]
+    },
+    {
+        name: "Match",
+        image: "https://picsum.photos/200/300",
+        answers: [2,2,2,2,2,2,2,2,2,2]
+    },
+    {
+        name: "Other",
+        image: "https://picsum.photos/200/300",
+        answers: [5,5,5,5,5,5,5,5,5,5]
+    },
 ];
 
-$( document ).ready(function() {
-
-    $.get("/api/friends", function(data) {
-        console.log(data);
-    });
-    
-    
-    $("#survey-answer-btn").on("click", function(event) {
-        event.preventDefault();
-    
-        let newFriend = {
-            name: $("name").val().trim(),
-            image: $("image").val().trim(),
-        }
-    
-        $.post("/api/friends", newFriend).then(function(data) {
-    
-        });
-    });
-    
-});
+module.exports = friends;
