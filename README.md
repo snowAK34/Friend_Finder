@@ -36,6 +36,7 @@ On hitting submit, a modal will popup with the name and picture for the closest 
 ## Technologies Used
 
 HTML, CSS, Javascript, JQuery, & a Bootstrap modal for front end
+
 Node.js & Express for back end
 
 
