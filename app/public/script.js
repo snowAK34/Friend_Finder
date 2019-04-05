@@ -16,7 +16,7 @@ $(document).ready(function() {
         let divArr = ["#q1", "#q2", "#q3", "#q4", "#q5", "#q6", "#q7", "#q8", "#q9", "#q10"];
 
         for (let i = 0; i < divArr.length; i++) {
-            $(divArr[i]).append(answerMenu.clone().attr("class", "numPick"));
+            $(divArr[i]).append(answerMenu.clone().attr({"class": "numPick", "name": "q" + i}));
         }
     }
 
@@ -54,11 +54,7 @@ $(document).ready(function() {
 
         console.log(newFriend);
     
-        $.post("/api/friends", newFriend).then(function(data) {
-            console.log(data);
-            console.log(data.name);
-            console.log(data.image);
-
+        $.post("/api/friends", newFriend, function(data) {
             $("#match").modal("toggle");
             $(".modal-body").empty();
             $(".modal-body").append("<p>" + data.name + "</p><br><img id='result-img' src=" + data.image + ">");
@@ -67,6 +63,8 @@ $(document).ready(function() {
      } else {
          alert("Must fill out all fields before submitting.");
      }
+        
+        $("form").trigger("reset");
 
     });
 });
