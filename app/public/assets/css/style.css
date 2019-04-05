@@ -83,6 +83,10 @@ form {
     border: solid 2px #d9a693;
 }
 
+#result-img {
+    max-width: 300px;
+}
+
 @media only screen and (max-width : 768px) {
     #survey-head, #survey-input-div {
         margin: 0;
