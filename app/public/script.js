@@ -1,10 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     let newFriend;
 
-    $("#json-link").on("click", function() {
-        $.get("/api/friends", function(data) {
-            console.log(data);
+    $("#json-link").on("click", function () {
+        $.get("/api/friends", function (data) {
         });
     });
 
@@ -16,54 +15,52 @@ $(document).ready(function() {
         let divArr = ["#q1", "#q2", "#q3", "#q4", "#q5", "#q6", "#q7", "#q8", "#q9", "#q10"];
 
         for (let i = 0; i < divArr.length; i++) {
-            $(divArr[i]).append(answerMenu.clone().attr({"class": "numPick", "name": "q" + i}));
+            $(divArr[i]).append(answerMenu.clone().attr({ "class": "numPick", "name": "q" + i }));
         }
     }
 
     function validateForm() {
         let isValid = true;
-        $(".form-control").each(function() {
+        $(".form-control").each(function () {
             if ($(this).val() === "") {
                 isValid = false;
             }
         });
-        $(".numPick").each(function() {
-            if($(this).val() === "") {
+        $(".numPick").each(function () {
+            if ($(this).val() === "") {
                 isValid = false;
             }
         })
         return isValid;
     }
 
-    $("#survey-answer-btn").on("click", function(event) {
+    $("#survey-answer-btn").on("click", function (event) {
         event.preventDefault();
 
         if (validateForm()) {
-    
-        let objArr = $(".numPick");
-        let answers = [];
-        for (let i = 0; i < objArr.length; i++) {
-            answers.push(objArr[i].value);
+
+            let objArr = $(".numPick");
+            let answers = [];
+            for (let i = 0; i < objArr.length; i++) {
+                answers.push(objArr[i].value);
+            }
+
+            newFriend = {
+                name: $("#name").val().trim(),
+                image: $("#image").val().trim(),
+                answers: answers
+            }
+
+            $.post("/api/friends", newFriend, function (data) {
+                $("#match").modal("toggle");
+                $(".modal-body").empty();
+                $(".modal-body").append("<p>" + data.name + "</p><br><img id='result-img' src=" + data.image + ">");
+            });
+
+        } else {
+            alert("Must fill out all fields before submitting.");
         }
 
-        newFriend = {
-            name: $("#name").val().trim(),
-            image: $("#image").val().trim(),
-            answers: answers
-        }
-
-        console.log(newFriend);
-    
-        $.post("/api/friends", newFriend, function(data) {
-            $("#match").modal("toggle");
-            $(".modal-body").empty();
-            $(".modal-body").append("<p>" + data.name + "</p><br><img id='result-img' src=" + data.image + ">");
-        });
-
-     } else {
-         alert("Must fill out all fields before submitting.");
-     }
-        
         $("form").trigger("reset");
 
     });
